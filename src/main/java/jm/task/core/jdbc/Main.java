@@ -1,6 +1,7 @@
 package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
+import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
 import jm.task.core.jdbc.util.Util;
 
@@ -8,7 +9,7 @@ import java.sql.*;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        UserServiceImpl kek = new UserServiceImpl();
+        UserService kek = new UserServiceImpl();
         // создание таблицы
         kek.createUsersTable();
         // добавление 4-х пользователей

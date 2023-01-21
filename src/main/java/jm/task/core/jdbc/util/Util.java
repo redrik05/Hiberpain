@@ -14,10 +14,6 @@ public class Util {
             System.out.println("invalid Driver");
         }
 
-
-
-        //ПОЛУЧЕНИЕ ДАННЫХ
-
     }
     // реализуйте настройку соединения с БД
 
