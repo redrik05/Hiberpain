@@ -1,5 +1,7 @@
 package jm.task.core.jdbc;
 
+import jm.task.core.jdbc.dao.UserDao;
+import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
@@ -9,20 +11,22 @@ import java.sql.*;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        UserService kek = new UserServiceImpl();
+
+        UserDao us = new UserDaoHibernateImpl();
+
         // создание таблицы
-        kek.createUsersTable();
+        us.createUsersTable();
         // добавление 4-х пользователей
-        kek.saveUser("Джон", "Дориан", (byte) 23);
-        kek.saveUser("Персиваль", "Кокс", (byte) 46);
-        kek.saveUser("Роберт", "Келсо", (byte) 65);
-        kek.saveUser("Убо", "Рщик", (byte) 45);
+        us.saveUser("Джон", "Дориан", (byte) 23);
+        us.saveUser("Персиваль", "Кокс", (byte) 46);
+        us.saveUser("Роберт", "Келсо", (byte) 65);
+        us.saveUser("Убо", "Рщик", (byte) 45);
         // получение списка пользователей и вывод в консоль
-        System.out.println(kek.getAllUsers());
+        System.out.println(us.getAllUsers());
         // очищение списка пользователей
-        kek.cleanUsersTable();
+        us.cleanUsersTable();
         // удаление таблицы пользователей
-        kek.dropUsersTable();
+        us.dropUsersTable();
     }
 }
         /*
